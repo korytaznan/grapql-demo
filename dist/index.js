@@ -22,7 +22,8 @@ const loggingMiddleware = (req, res, next) => {
     (0, userResolvers_1.pushIp)(req.ip);
     next();
 };
-app.use((0, helmet_1.default)({ contentSecurityPolicy: (process.env.NODE_ENV === 'production') ? undefined : false }));
+// app.use(helmet({ contentSecurityPolicy: (process.env.NODE_ENV === 'production') ? undefined : false }));
+app.use((0, helmet_1.default)({ contentSecurityPolicy: false }));
 app.use(body_parser_1.default.json());
 app.use((0, cors_1.default)());
 app.use(body_parser_1.default.urlencoded({ extended: true }));
